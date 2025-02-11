@@ -21,7 +21,7 @@ const CommonForm = ({
           <div className="relative flex items-center mt-8">
             <Input
               type="text"
-              disabled={getCurrentControl.disabled}
+              disabled={getCurrentControl?.disabled}
               placeholder={getCurrentControl.placeholder}
               name={getCurrentControl.name}
               id={getCurrentControl.name}
@@ -73,7 +73,14 @@ const CommonForm = ({
   };
   return (
     <form action={action}>
-      {formControls.map((control) => renderInputByComponentType(control))}
+      {/* {formControls.map((control) => renderInputByComponentType(control))}
+       */}
+       {formControls.map((control, index) => (
+  <React.Fragment key={index}>
+    {renderInputByComponentType(control)}
+  </React.Fragment>
+))}
+
       <div className="mt-6 w-full">
         <Button
           type={btnType || "submit"}

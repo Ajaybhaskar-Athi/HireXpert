@@ -24,7 +24,6 @@ export const intialRecruiterFormData={
         name:'',
         companyName:"",
         companyRole:"",
-        isPremiumUser:false 
 }
 
 export const candidateOnBoardFormControls=[
@@ -138,6 +137,63 @@ export const intialCandidateFormData={
     graduatedYear:"",
     linkedinProfile:"",
     githubProfile:"",
-    isPremiumUser:false
+
+}
+
+export const postNewJobFormControls=[
+    {
+        label:'Company Name',
+        name:'companyName',
+        placeholder:`Company Name`,
+        componentType:'input',
+        disabled:true 
+    },
+    {
+        label:'Title',
+        name:'title',
+        placeholder:`Job Title`,
+        componentType:'input'
+    },
+    {
+        label:'Type',
+        name:'type',
+        placeholder:`Job Type`,
+        componentType:'input'
+    },
+    {
+        label:'Location',
+        name:'location',
+        placeholder:`Job Location`,
+        componentType:'input'
+    },
+    {
+        label:'Experience',
+        name:'experience',
+        placeholder:`Experience`,
+        componentType:'input'
+    },
+    {
+        label:'Skills',
+        name:'skills',
+        placeholder:'Skills',
+        componentType:'input'
+    },
+    {
+        label:'Description',
+        name:'description',
+        placeholder:`Job Description`,
+        componentType:'input'
+    },
+
+]
+
+export const initialPostNewJobFormData={
+    companyName:'',
+    title:'',
+    type:'',
+    location:'',
+    experience:'',
+    description:'',
+    skills:"",
 
 }

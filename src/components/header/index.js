@@ -107,7 +107,7 @@
 //     )
 // }
 
-// export default Header
+// export default Header 
 
 'use client'
 
@@ -118,8 +118,23 @@ import Link from "next/link"
 import { Badge } from "../ui/badge"
 import { UserButton, useAuth } from "@clerk/nextjs"
 
-function Header() {
+function Header(user,profileInfo) {
+    console.log(user,profileInfo);
     const { isSignedIn } = useAuth(); // Fetch authentication state
+    // const menuItems = [
+    //     { label: 'Home', path: '/', show: true },
+    //     { label: 'Login', path: '/sign-in', show: !user }, 
+    //     { label: 'Register', path: '/sign-up', show: !user }, 
+    //     { label: 'Jobs', path: '/jobs', show: profileInfo },
+    //     { label: 'Activity', path: '/activity', show: profileInfo?.role==='candidate' },
+    //     { label: 'Membership', path: '/membership', show: profileInfo },
+    //     { label: 'Account', path: '/account', show: profileInfo },
+    //     {
+    //         label: "Companies",
+    //         path: "/companies",
+    //         show: profileInfo?.role === "candidate",
+    //       },
+    // ];
 
     const menuItems = [
         { label: 'Home', path: '/', show: true },
@@ -129,7 +144,6 @@ function Header() {
         { label: 'Activity', path: '/activity', show: isSignedIn },
         { label: 'Membership', path: '/membership', show: isSignedIn },
         { label: 'Account', path: '/account', show: isSignedIn },
-        // { label: 'Logout', path: '/sign-out', show: isSignedIn },
     ];
 
     return (
